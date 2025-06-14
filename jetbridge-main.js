@@ -18,7 +18,7 @@ function loadJB()
 geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
-"position": [4.58887,12.4009,-3.88463]
+"position": [0,0,0]
 }]
 );
 }
