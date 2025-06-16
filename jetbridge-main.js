@@ -15,12 +15,33 @@
 
 function loadJB()
 {
+    if(modelOption=="option1")
+    {
 geofs.aircraft.instance.addParts([{
+"name":"pfd9",
+"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt6.glb",
+"position": [0,0,0]
+}]
+);
+    }
+    else if(modelOption=="option2")
+    {
+    geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
 "position": [0,0,0]
 }]
 );
+    }
+    else if(modelOption=="option3")
+    {
+    geofs.aircraft.instance.addParts([{
+"name":"pfd9",
+"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt8.glb",
+"position": [0,0,0]
+}]
+);
+    }
 }
 let offset = 0;
 function changePos()
@@ -82,6 +103,10 @@ listdiv.innerHTML = `
     <span class="slider round"></span>Jetbridge
   </label>
 <br>
+ <label><input type="radio" name="option" value="option1"  data-value="1"> Jetbridge 1</label><br>
+  <label><input type="radio" name="option" value="option2"  data-value="2"> Jetbridge 2</label><br>
+    <label><input type="radio" name="option" value="option3"  data-value="3"> Jetbridge 3</label><br>
+
   <label for="moveAmount">Move Amount:</label>
 <select id="moveAmount">
  <option value="0.05">0.05</option>
@@ -115,6 +140,7 @@ listdiv.innerHTML = `
   </button>
   <br>
 `;
+// valuepressed
 let valuepressed = null;
 document.querySelectorAll(".mdl-button.mdl-js-button.geofs-f-standard-ui.geofs-mediumScreenOnly").forEach(button => {
     button.addEventListener("click", function() {
@@ -123,10 +149,23 @@ document.querySelectorAll(".mdl-button.mdl-js-button.geofs-f-standard-ui.geofs-m
     });
 });
 console.log("Returned value out:", valuepressed);
-// valuepressed
+
 function getButtonValue(buttonElement) {
     return buttonElement.getAttribute("data-value");
 }
+//model option
+  let modelOption = null;
+
+  // Add event listeners to all radio buttons with name="choice"
+  document.querySelectorAll('input[name="option"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.checked) {
+        modelOption = radio.value; // Update the modelOption variable
+        console.log("Selected model option:", modelOption);
+      }
+    });
+  });
+
 
 document.getElementById("toggleSwitch").addEventListener("click", function () {
     let isChecked = document.getElementById("toggleSwitch").checked;
