@@ -19,7 +19,7 @@ function loadJB()
     {
 geofs.aircraft.instance.addParts([{
 "name":"pfd9",
-"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt6.glb",
+"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt11.glb",
 "position": [0,0,0]
 }]
 );
@@ -28,12 +28,21 @@ geofs.aircraft.instance.addParts([{
     {
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
-"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
+"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt6.glb",
 "position": [0,0,0]
 }]
 );
     }
     else if(modelOption=="option3")
+    {
+    geofs.aircraft.instance.addParts([{
+"name":"pfd9",
+"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
+"position": [0,0,0]
+}]
+);
+    }
+    else if(modelOption=="option4")
     {
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
@@ -105,7 +114,8 @@ listdiv.innerHTML = `
 <br>
  <label><input type="radio" name="option" value="option1"  data-value="1"> Jetbridge 1</label><br>
   <label><input type="radio" name="option" value="option2"  data-value="2"> Jetbridge 2</label><br>
-    <label><input type="radio" name="option" value="option3"  data-value="3"> Jetbridge 3</label><br>
+  <label><input type="radio" name="option" value="option3"  data-value="3"> Jetbridge 3</label><br>
+  <label><input type="radio" name="option" value="option4"  data-value="4"> Jetbridge 4</label><br>
 
   <label for="moveAmount">Move Amount:</label>
 <select id="moveAmount">
