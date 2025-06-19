@@ -5,7 +5,7 @@
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt11.glb"
 },
 {
-    "name":"ground vehicle 1",
+    "name":"ground vehicle 2",
     "id":2,
     "position":[0,3,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt8.glb"
