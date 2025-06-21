@@ -13,6 +13,7 @@
 
 // This addon is still in its development and may get more tweaks in future
 
+//backend/aircraft/repository/Boeing 737-600_427352_5203/
 function loadJB()
 {
     if(modelOption=="option1")
@@ -52,6 +53,15 @@ geofs.aircraft.instance.addParts([{
 );
     }
 }
+function loadJBjson() {
+    const partsveh = [{
+        "name":"",
+        "model":"",
+        "position":"[0,0,0]"
+    }]
+    partsveh[0].name = listData[0].name;
+    partsveh[1].model = listData[3].model;
+}
 let offset = 0;
 function changePos()
 {
@@ -61,26 +71,26 @@ function changePos()
    let y = pos[1];
     let z = pos[2];
 
-if(valuepressed==1){
+if(valuepressed==1 && JBlockCheckValue==0 ){
      x+=a;
 }
-else if(valuepressed==2)
+else if(valuepressed==2 && JBlockCheckValue==0)
 {
  x-=a;
 }
-else if(valuepressed==3)
+else if(valuepressed==3 && JBlockCheckValue==0)
 {
  y+=a;
 }
-else if(valuepressed==4)
+else if(valuepressed==4&& JBlockCheckValue==0)
 {
  y-=a;
 }
-else if(valuepressed==5)
+else if(valuepressed==5&& JBlockCheckValue==0)
 {
  z+=a;
 }
-else if(valuepressed==6)
+else if(valuepressed==6&& JBlockCheckValue==0)
 {
  z-=a;
 }
@@ -93,6 +103,7 @@ console.log("invalid");
     console.log(geofs.aircraft.instance.parts.pfd9.position);
 }
 
+//
 
 // Dynamically create the panel div
 let listdiv = document.createElement("div");
@@ -105,6 +116,28 @@ document.getElementsByClassName("geofs-ui-left")[0].appendChild(listdiv);
 
 
 listdiv.innerHTML = `
+<style>
+      .dropdown button {
+        background-color: rgb(188, 192, 195);
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+      .dropdown label {
+        display: block;
+        color: black;
+        padding: 7px 9px;
+      }
+      .dropdown #lockContent {
+        display: none;
+        position: absolute;
+        background-color: rgb(213, 213, 205);
+        min-width: 100px;
+      }
+      .dropdown:hover #lockContent {
+        display: block;
+      }
+    </style>
   <h3>Jetbridge</h3>
 <br>
   <label class="switch">
@@ -126,6 +159,14 @@ listdiv.innerHTML = `
   <option value="1">1</option>
    <option value="3">3</option>
 </select>
+<br>
+<ul id="listitem">
+</ul>
+
+<div id="vehSwitch">
+
+</div>
+
 <br>
   <button id="plusX"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="1">
     +X
@@ -149,6 +190,21 @@ listdiv.innerHTML = `
     -Z
   </button>
   <br>
+   <label class="switch">
+    <input type="checkbox" id="jbLock">
+    <span class="slider round"></span>lock Jetbridge
+  </label>
+
+  <div id="lockMenu">
+  </div>
+   <div class="dropdown">
+      <button>Lock vehicles</button>
+      <div id="lockContent">
+      
+      </div>
+
+    </div>
+
 `;
 // valuepressed
 let valuepressed = null;
@@ -165,14 +221,20 @@ function getButtonValue(buttonElement) {
 }
 //model option
   let modelOption = null;
-
+  let modelOptionChecked = null;
+let JBlockCheckValue = null;
   // Add event listeners to all radio buttons with name="choice"
   document.querySelectorAll('input[name="option"]').forEach(radio => {
     radio.addEventListener('change', () => {
       if (radio.checked) {
-        modelOption = radio.value; // Update the modelOption variable
+        modelOption = radio.value;
+         modelOptionChecked = true;
+          // Update the modelOption variable
         console.log("Selected model option:", modelOption);
       }
+        else{
+            modelOptionChecked = false;
+        }
     });
   });
 
@@ -186,6 +248,16 @@ document.getElementById("toggleSwitch").addEventListener("click", function () {
         geofs.aircraft.instance.parts['pfd9'].object3d.destroy();
     }
 });
+document.getElementById("jbLock").addEventListener("click",function () {
+     let isCheckedJBlock = document.getElementById("toggleSwitch").checked;
+    if(isCheckedJBlock){
+        JBlockCheckValue =1;
+    }
+    else{
+        JBlockCheckValue =0;
+    }
+console.log(JBlockCheckValue);
+});
 
 document.getElementById("LeftButton").addEventListener("click", changePos);
 document.getElementById("negY").addEventListener("click", changePos);
@@ -193,6 +265,129 @@ document.getElementById("plusX").addEventListener("click", changePos);
 document.getElementById("negX").addEventListener("click", changePos);
 document.getElementById("plusZ").addEventListener("click", changePos);
 document.getElementById("negZ").addEventListener("click", changePos);
+
+const listel = document.querySelector('#listitem');
+const listelCheckbox = document.querySelector('#vehSwitch');
+const lockItem = document.querySelector('#lockContent');
+let listData = null;
+let len = null;
+let poslist = null;
+let lockValue = false;
+
+
+let nameArr = [];
+fetch('https://raw.githubusercontent.com/Spice9/Geofs-Jetbridge/refs/heads/main/ground-vehicles.json')
+    .then(res => res.json())
+    .then(data => {
+        listData = data;
+        len = data.length;
+        data.forEach(post => {
+            listelCheckbox.insertAdjacentHTML("beforeend", ` <label">
+    <input type="checkbox" id="checkVeh">
+    <span class="slider-round-veh"></span>${post.name}
+  </label><br>`)
+ lockItem.insertAdjacentHTML("beforeend",` <label">
+    <input type="checkbox" id="checkLockList">
+    <span class="slider-round-lock"></span>${post.name}
+  </label><br>`)
+
+        });
+
+for(let i=0;i<len;i++)
+{
+ nameArr[i] = 0;
+}
+document.querySelectorAll('#lockContent input').forEach((lockedItem, index) => {
+    lockedItem.addEventListener("click", () => {
+       lockValue = lockedItem.checked;
+        console.log(lockValue);
+        if(lockValue)
+        {
+          nameArr[index]=1;
+        }
+        else{
+        nameArr[index]=0;
+        }
+        console.log(nameArr);
+    });
+});
+
+
+        // Moved the event listener here, after list is loaded
+        document.querySelectorAll('#vehSwitch input').forEach((listItem, index) => {
+            listItem.addEventListener("click", () => {
+               let isCheckedVeh = listItem.checked;
+                if (isCheckedVeh)
+                {
+                const partsveh = [{
+                    "name": listData[index].name,
+                    "model": listData[index].model,
+                    "position": [0,0,0]
+                }];
+                geofs.aircraft.instance.addParts(partsveh);
+
+                    console.log(nameArr);
+                poslist = geofs.aircraft.instance.parts[listData[index].name].position;
+               console.log(geofs.aircraft.instance.parts[listData[index].name].position);
+
+                }
+            else {
+                 geofs.aircraft.instance.parts[listData[index].name].object3d.destroy();
+            }
+        //change position using parameters
+
+                function changePosPara()
+                {
+                   let a = parseFloat(document.getElementById("moveAmount").value);
+ let pos = geofs.aircraft.instance.parts[listData[index].name].position;
+   let x = pos[0];
+   let y = pos[1];
+    let z = pos[2];
+    if(valuepressed==1 && nameArr[index]==0){
+     x+=a;
+}
+else if(valuepressed==2 && nameArr[index]==0)
+{
+ x-=a;
+}
+else if(valuepressed==3 && nameArr[index]==0)
+{
+ y+=a;
+}
+else if(valuepressed==4 && nameArr[index]==0)
+{
+ y-=a;
+}
+else if(valuepressed==5 && nameArr[index]==0)
+{
+ z+=a;
+}
+else if(valuepressed==6 && nameArr[index]==0)
+{
+ z-=a;
+}
+else{
+console.log("invalid");
+}
+    console.log("Returned value out:", valuepressed);
+  geofs.api.addFrameCallback(function(){geofs.aircraft.instance.parts[listData[index].name].object3d._position = [x, y, z];})
+    geofs.aircraft.instance.parts[listData[index].name].position = [x,y,z];
+    console.log(geofs.aircraft.instance.parts[listData[index].name].position);
+
+                }
+                changePosPara();
+document.getElementById("LeftButton").addEventListener("click", changePosPara);
+document.getElementById("negY").addEventListener("click", changePosPara);
+document.getElementById("plusX").addEventListener("click", changePosPara);
+document.getElementById("negX").addEventListener("click", changePosPara);
+document.getElementById("plusZ").addEventListener("click", changePosPara);
+document.getElementById("negZ").addEventListener("click", changePosPara);
+
+            });
+        });
+    });
+
+
 
 // Creates a button to toggle the panel
 let button1 = document.createElement("div");
