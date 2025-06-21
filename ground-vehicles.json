@@ -8,7 +8,7 @@
     "name":"Fuel Truck",
     "id":2,
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/fltruck.glb"
+    "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/fltruck2.glb"
 },
 {
     "name":"Jetbridge 1",
