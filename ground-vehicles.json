@@ -1,36 +1,36 @@
 [{
     "name":"Forklift",
-    "id":1,
+    "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/frk3.glb"
 },
 {
     "name":"Fuel Truck",
-    "id":2,
+     "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/fltruck2.glb"
 },
 {
     "name":"Jetbridge 1",
-    "id":3,
+     "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt11.glb"
 },
 {
     "name":"Jetbridge 2",
-    "id": 4,
+     "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt6.glb"
 },
 {
     "name":"Jetbridge 3",
-    "id":5,
+     "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb"
 },
 {
     "name":"Jetbridge 4",
-    "id": 6,
+     "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt8.glb"
 }]
