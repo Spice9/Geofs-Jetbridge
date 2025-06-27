@@ -10,6 +10,12 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/fltruck2.glb"
 },
+    {
+    "name":"Catering Truck",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/cttruck.glb"
+},
 {
     "name":"Jetbridge 1",
      "rotation":[0,0,0],
