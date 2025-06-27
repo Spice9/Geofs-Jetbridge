@@ -21,7 +21,8 @@ function loadJB()
 geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt11.glb",
-"position": [0,0,0]
+"position": [0,0,0],
+"rotation":[0,0,0]
 }]
 );
     }
@@ -30,7 +31,8 @@ geofs.aircraft.instance.addParts([{
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt6.glb",
-"position": [0,0,0]
+"position": [0,0,0],
+"rotation":[0,0,0]
 }]
 );
     }
@@ -39,7 +41,8 @@ geofs.aircraft.instance.addParts([{
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
-"position": [0,0,0]
+"position": [0,0,0],
+"rotation":[0,0,0]
 }]
 );
     }
@@ -48,19 +51,11 @@ geofs.aircraft.instance.addParts([{
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
 "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt8.glb",
-"position": [0,0,0]
+"position": [0,0,0],
+"rotation":[0,0,0]
 }]
 );
     }
-}
-function loadJBjson() {
-    const partsveh = [{
-        "name":"",
-        "model":"",
-        "position":"[0,0,0]"
-    }]
-    partsveh[0].name = listData[0].name;
-    partsveh[1].model = listData[3].model;
 }
 let offset = 0;
 function changePos()
@@ -71,7 +66,7 @@ function changePos()
    let y = pos[1];
     let z = pos[2];
 
-if(valuepressed==1 && JBlockCheckValue==0 ){
+if(valuepressed==1&& JBlockCheckValue==0){
      x+=a;
 }
 else if(valuepressed==2 && JBlockCheckValue==0)
@@ -103,7 +98,31 @@ console.log("invalid");
     console.log(geofs.aircraft.instance.parts.pfd9.position);
 }
 
-//
+//rotate
+function rotate()
+{
+let r = parseFloat(document.getElementById("rotateAmount").value);
+ let rot = geofs.aircraft.instance.parts.pfd9.rotation;
+    let x = rot[1];
+if(valuepressed==7&& JBlockCheckValue==0)
+{
+ x+=r;
+ console.log(x);
+}
+else if(valuepressed==8&& JBlockCheckValue==0)
+{
+x-=r;
+}
+     geofs.api.addFrameCallback(function(){
+    var part = geofs.aircraft.instance.parts['pfd9'];
+    if (part && part.object3d) {
+        part.object3d.rotateZ(x*(Math.PI / 180));
+    }
+     geofs.aircraft.instance.parts.pfd9.rotation[2] = x;
+});
+    console.log(geofs.aircraft.instance.parts.pfd9.object3d._rotation);
+    console.log(x);
+}
 
 // Dynamically create the panel div
 let listdiv = document.createElement("div");
@@ -117,26 +136,41 @@ document.getElementsByClassName("geofs-ui-left")[0].appendChild(listdiv);
 
 listdiv.innerHTML = `
 <style>
-      .dropdown button {
-        background-color: rgb(188, 192, 195);
-        color: black;
-        border: none;
-        cursor: pointer;
-      }
-      .dropdown label {
-        display: block;
-        color: black;
-        padding: 7px 9px;
-      }
-      .dropdown #lockContent {
-        display: none;
-        position: absolute;
-        background-color: rgb(213, 213, 205);
-        min-width: 100px;
-      }
-      .dropdown:hover #lockContent {
-        display: block;
-      }
+      .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown button {
+      background-color: rgb(188, 192, 195);
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgb(213, 213, 205);
+      min-width: 100px;
+      z-index: 1;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .dropdown .option {
+      padding: 7px 9px;
+      cursor: pointer;
+      color: black;
+    }
+
+    .dropdown .option:hover {
+      background-color: #ccc;
+    }
+
+    .dropdown.show .dropdown-content {
+      display: block;
+    }
     </style>
   <h3>Jetbridge</h3>
 <br>
@@ -190,6 +224,26 @@ listdiv.innerHTML = `
     -Z
   </button>
   <br>
+    <label for="rotateAmount">Rotate Amount:</label>
+<select id="rotateAmount">
+ <option value="11.25">11.25</option>
+  <option value="22.5 selected">22.5</option>
+  <option value="45">45</option>
+  <option value="90">90</option>
+  <option value="180">180</option>
+</select>
+
+<div>
+  <button id="cw"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="7">
+    <-Clockwise
+  </button>
+  <button id="acw" data-value="8" class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly">
+    Anticlockwise->
+  </button>
+  <br>
+</div>
+
+<br>
    <label class="switch">
     <input type="checkbox" id="jbLock">
     <span class="slider round"></span>lock Jetbridge
@@ -200,7 +254,7 @@ listdiv.innerHTML = `
    <div class="dropdown">
       <button>Lock vehicles</button>
       <div id="lockContent">
-      
+
       </div>
 
     </div>
@@ -248,16 +302,12 @@ document.getElementById("toggleSwitch").addEventListener("click", function () {
         geofs.aircraft.instance.parts['pfd9'].object3d.destroy();
     }
 });
-document.getElementById("jbLock").addEventListener("click",function () {
-     let isCheckedJBlock = document.getElementById("toggleSwitch").checked;
-    if(isCheckedJBlock){
-        JBlockCheckValue =1;
-    }
-    else{
-        JBlockCheckValue =0;
-    }
-console.log(JBlockCheckValue);
+document.getElementById("jbLock").addEventListener("click", function () {
+    let isCheckedJBlock = document.getElementById("jbLock").checked;
+    JBlockCheckValue = isCheckedJBlock ? 1 : 0;
+    console.log("Jetbridge Lock:", JBlockCheckValue);
 });
+
 
 document.getElementById("LeftButton").addEventListener("click", changePos);
 document.getElementById("negY").addEventListener("click", changePos);
@@ -265,6 +315,9 @@ document.getElementById("plusX").addEventListener("click", changePos);
 document.getElementById("negX").addEventListener("click", changePos);
 document.getElementById("plusZ").addEventListener("click", changePos);
 document.getElementById("negZ").addEventListener("click", changePos);
+
+document.getElementById("cw").addEventListener("click", rotate);
+document.getElementById("acw").addEventListener("click", rotate);
 
 const listel = document.querySelector('#listitem');
 const listelCheckbox = document.querySelector('#vehSwitch');
@@ -322,7 +375,8 @@ document.querySelectorAll('#lockContent input').forEach((lockedItem, index) => {
                 const partsveh = [{
                     "name": listData[index].name,
                     "model": listData[index].model,
-                    "position": [0,0,0]
+                    "position": [0,0,0],
+                    "rotation":[0,0,0]
                 }];
                 geofs.aircraft.instance.addParts(partsveh);
 
@@ -342,7 +396,7 @@ document.querySelectorAll('#lockContent input').forEach((lockedItem, index) => {
  let pos = geofs.aircraft.instance.parts[listData[index].name].position;
    let x = pos[0];
    let y = pos[1];
-    let z = pos[2];
+   let z = pos[2];
     if(valuepressed==1 && nameArr[index]==0){
      x+=a;
 }
@@ -373,15 +427,43 @@ console.log("invalid");
   geofs.api.addFrameCallback(function(){geofs.aircraft.instance.parts[listData[index].name].object3d._position = [x, y, z];})
     geofs.aircraft.instance.parts[listData[index].name].position = [x,y,z];
     console.log(geofs.aircraft.instance.parts[listData[index].name].position);
-
-                }
+}
                 changePosPara();
+//rotate
+function rotateVeh()
+{
+let r = parseFloat(document.getElementById("rotateAmount").value);
+ let rot = geofs.aircraft.instance.parts[listData[index].name].rotation;
+    let x = rot[1];
+if(valuepressed==7&& nameArr[index]==0)
+{
+ x+=r;
+ console.log(x);
+}
+else if(valuepressed==8&& nameArr[index]==0)
+{
+x-=r;
+}
+     geofs.api.addFrameCallback(function(){
+    var part = geofs.aircraft.instance.parts[listData[index].name];
+    if (part && part.object3d) {
+        part.object3d.rotateZ(x*(Math.PI / 180));
+    }
+     geofs.aircraft.instance.parts[listData[index].name].rotation[2] = x;
+});
+    console.log(geofs.aircraft.instance.parts[listData[index].name].object3d._rotation);
+    console.log(x);
+}
+
 document.getElementById("LeftButton").addEventListener("click", changePosPara);
 document.getElementById("negY").addEventListener("click", changePosPara);
 document.getElementById("plusX").addEventListener("click", changePosPara);
 document.getElementById("negX").addEventListener("click", changePosPara);
 document.getElementById("plusZ").addEventListener("click", changePosPara);
 document.getElementById("negZ").addEventListener("click", changePosPara);
+
+document.getElementById("cw").addEventListener("click", rotateVeh);
+document.getElementById("acw").addEventListener("click", rotateVeh);
 
             });
         });
