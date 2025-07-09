@@ -44,5 +44,5 @@
     "name":"Jetbridge 5",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jwt12.glb"
+    "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/jwt12.glb"
 }]
