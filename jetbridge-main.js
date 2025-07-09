@@ -56,6 +56,16 @@ geofs.aircraft.instance.addParts([{
 }]
 );
     }
+      else if(modelOption=="option5")
+    {
+    geofs.aircraft.instance.addParts([{
+"name":"pfd9",
+"model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/jwt12.glb",
+"position": [0,0,0],
+"rotation":[0,0,0]
+}]
+);
+    }
 }
 let offset = 0;
 function changePos()
@@ -183,7 +193,7 @@ listdiv.innerHTML = `
   <label><input type="radio" name="option" value="option2"  data-value="2"> Jetbridge 2</label><br>
   <label><input type="radio" name="option" value="option3"  data-value="3"> Jetbridge 3</label><br>
   <label><input type="radio" name="option" value="option4"  data-value="4"> Jetbridge 4</label><br>
-
+  <label><input type="radio" name="option" value="option5"  data-value="5"> Jetbridge 5</label><br>
   <label for="moveAmount">Move Amount:</label>
 <select id="moveAmount">
  <option value="0.05">0.05</option>
@@ -276,7 +286,7 @@ function getButtonValue(buttonElement) {
 //model option
   let modelOption = null;
   let modelOptionChecked = null;
-let JBlockCheckValue = null;
+let JBlockCheckValue = 0;
   // Add event listeners to all radio buttons with name="choice"
   document.querySelectorAll('input[name="option"]').forEach(radio => {
     radio.addEventListener('change', () => {
