@@ -14,7 +14,7 @@
     "name":"Catering Truck",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/cttruck.glb"
+    "model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck2.glb"
 },
      {
     "name":"Airport bus",
