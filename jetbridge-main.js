@@ -210,7 +210,24 @@ listdiv.innerHTML = `
 <div id="vehSwitch">
 
 </div>
-
+<div>
+  <button id="raise"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="9">
+    Raise
+  </button>
+  <button id="lower" data-value="10" class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly">
+   Lower
+  </button>
+  <br>
+</div>
+<div>
+  <button id="door"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="11">
+    Open doors
+  </button>
+   <button id="door2"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="12">
+    Close doors
+  </button>
+  <br>
+</div>
 <br>
   <button id="plusX"  class="mdl-button mdl-js-button geofs-f-standard-ui geofs-mediumScreenOnly" data-value="1">
     +X
@@ -356,7 +373,7 @@ fetch('https://raw.githubusercontent.com/Spice9/Geofs-Jetbridge/refs/heads/main/
 
         });
 
-for(let i=0;i<len;i++)
+for(let i=0;i<len+12;i++)
 {
  nameArr[i] = 0;
 }
@@ -399,7 +416,30 @@ document.querySelectorAll('#lockContent input').forEach((lockedItem, index) => {
                  geofs.aircraft.instance.parts[listData[index].name].object3d.destroy();
             }
         //change position using parameters
-
+function rotateVeh()
+{
+let r = parseFloat(document.getElementById("rotateAmount").value);
+ let rot = geofs.aircraft.instance.parts[listData[index].name].rotation;
+    let x = rot[1];
+if(valuepressed==7&& nameArr[index]==0)
+{
+ x+=r;
+ console.log(x);
+}
+else if(valuepressed==8&& nameArr[index]==0)
+{
+x-=r;
+}
+     geofs.api.addFrameCallback(function(){
+    var part = geofs.aircraft.instance.parts[listData[index].name];
+    if (part && part.object3d) {
+        part.object3d.rotateZ(x*(Math.PI / 180));
+    }
+     geofs.aircraft.instance.parts[listData[index].name].rotation[2] = x;
+});
+    console.log(geofs.aircraft.instance.parts[listData[index].name].object3d._rotation);
+    console.log(x);
+}
                 function changePosPara()
                 {
                    let a = parseFloat(document.getElementById("moveAmount").value);
@@ -440,30 +480,7 @@ console.log("invalid");
 }
                 changePosPara();
 //rotate
-function rotateVeh()
-{
-let r = parseFloat(document.getElementById("rotateAmount").value);
- let rot = geofs.aircraft.instance.parts[listData[index].name].rotation;
-    let x = rot[1];
-if(valuepressed==7&& nameArr[index]==0)
-{
- x+=r;
- console.log(x);
-}
-else if(valuepressed==8&& nameArr[index]==0)
-{
-x-=r;
-}
-     geofs.api.addFrameCallback(function(){
-    var part = geofs.aircraft.instance.parts[listData[index].name];
-    if (part && part.object3d) {
-        part.object3d.rotateZ(x*(Math.PI / 180));
-    }
-     geofs.aircraft.instance.parts[listData[index].name].rotation[2] = x;
-});
-    console.log(geofs.aircraft.instance.parts[listData[index].name].object3d._rotation);
-    console.log(x);
-}
+
 
 document.getElementById("LeftButton").addEventListener("click", changePosPara);
 document.getElementById("negY").addEventListener("click", changePosPara);
@@ -471,16 +488,184 @@ document.getElementById("plusX").addEventListener("click", changePosPara);
 document.getElementById("negX").addEventListener("click", changePosPara);
 document.getElementById("plusZ").addEventListener("click", changePosPara);
 document.getElementById("negZ").addEventListener("click", changePosPara);
-
 document.getElementById("cw").addEventListener("click", rotateVeh);
 document.getElementById("acw").addEventListener("click", rotateVeh);
+
+     //Cube.009
+geofs.animation.values.jetbridgeRaiseValue = 0;
+geofs.animation.values.dooropen = 0;
+
+      geofs.aircraft.instance.addParts([{
+"name":"cater_arm_1",
+"parent":"Catering Truck",
+"node":"cater_arm_1",
+"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "jetbridgeRaiseValue",
+				"ratio": -50
+			},{
+				"type": "translate",
+				"axis": "Z",
+				"value": "jetbridgeRaiseValue",
+				"ratio": -4
+			}]
+}]
+);
+                  geofs.aircraft.instance.addParts([{
+"name":"cater_arm_2",
+"parent":"Catering Truck",
+"node":"cater_arm_2",
+"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "jetbridgeRaiseValue",
+				"ratio": 50
+			},{
+				"type": "translate",
+				"axis": "Z",
+				"value": "jetbridgeRaiseValue",
+				"ratio": 4
+			}]
+}]
+);
+
+                geofs.aircraft.instance.addParts([{
+"name":"cater_box",
+"parent":"Catering Truck",
+"node":"Cube.009",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "jetbridgeRaiseValue",
+				"ratio": 20
+			}]
+}]
+);
+                  geofs.aircraft.instance.addParts([{
+"name":"cater_box2",
+"parent":"Catering Truck",
+"node":"Cube.005",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "jetbridgeRaiseValue",
+				"ratio": 20
+			}]
+}]
+);
+                     geofs.aircraft.instance.addParts([{
+"name":"cater_box3",
+"parent":"Catering Truck",
+"node":"Cylinder",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "jetbridgeRaiseValue",
+				"ratio": 20
+			}]
+}]
+);
+ geofs.aircraft.instance.addParts([{
+  "name": "doorF1",
+  "parent":"Airport bus",
+ "type": "frame",
+  "node": "Cube.024",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": -80}
+            ]
+}]
+);
+                      geofs.aircraft.instance.addParts([{
+  "name": "doorF2",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.025",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": 170}
+            ]
+}]
+);
+       geofs.aircraft.instance.addParts([{
+  "name": "doorF3",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.016",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": 80}
+            ]
+}]
+);
+                   geofs.aircraft.instance.addParts([{
+  "name": "doorF4",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.015",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": -170}
+            ]
+}]
+);
+                geofs.aircraft.instance.addParts([{
+  "name": "doorB1",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.021",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": -80}
+            ]
+}]
+);
+                   geofs.aircraft.instance.addParts([{
+  "name": "doorB2",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.022",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": 170}
+            ]
+}]
+);
+                               geofs.aircraft.instance.addParts([{
+  "name": "doorB3",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.013",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": 80}
+            ]
+}]
+);
+                   geofs.aircraft.instance.addParts([{
+  "name": "doorB4",
+  "parent":"Airport bus",
+  "type": "frame",
+  "node": "Cube.023",
+            "animations": [
+                {"type": "rotate", "axis": "Y", "value": "dooropen", "ratio": -170}
+            ]
+}]
+);
+
+
+document.getElementById("door").addEventListener("click", function() {
+    geofs.animation.values.dooropen += 1;
+});
+document.getElementById("door2").addEventListener("click", function() {
+    geofs.animation.values.dooropen -= 1;
+});
 
             });
         });
     });
 
+document.getElementById("raise").addEventListener("click", function() {
+    geofs.animation.values.jetbridgeRaiseValue += 0.1;
+});
 
-
+document.getElementById("lower").addEventListener("click", function() {
+    geofs.animation.values.jetbridgeRaiseValue -= 0.1;
+});
 // Creates a button to toggle the panel
 let button1 = document.createElement("div");
 button1.setAttribute("data-noblur", "true");
