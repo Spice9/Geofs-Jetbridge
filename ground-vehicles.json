@@ -16,6 +16,12 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/cttruck.glb"
 },
+     {
+    "name":"Airport bus",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/aptbus.glb"
+},
 {
     "name":"Jetbridge 1",
      "rotation":[0,0,0],
