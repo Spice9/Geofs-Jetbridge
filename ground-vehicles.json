@@ -52,11 +52,17 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/jwt12.glb"
 },{
-    "name":"Airport Gate",
+    "name":"Airport Gate (Left)",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/SAAB%20340_427352_2892/gate2.glb"
+},{
+    "name":"Airport Gate (Right)",
      "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/SAAB%20340_427352_2892/gate1.glb"
 }]
+
 
 
 
