@@ -1,0 +1,149 @@
+[{
+	"name": "cater_arm_1",
+	"parent": "Catering Truck",
+	"node": "cater_arm_1",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -4
+	}]
+}, {
+	"name": "cater_arm_2",
+	"parent": "Catering Truck",
+	"node": "cater_arm_2",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 4
+	}]
+}, {
+	"name": "cater_box",
+	"parent": "Catering Truck",
+	"node": "Cube.009",
+	"animations": [{
+		"type": "translate",
+		"axis": "Y",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 20
+	}]
+}, {
+	"name": "cater_box2",
+	"parent": "Catering Truck",
+	"node": "Cube.005",
+	"animations": [{
+		"type": "translate",
+		"axis": "Y",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 20
+	}]
+}, {
+	"name": "cater_box3",
+	"parent": "Catering Truck",
+	"node": "Cylinder",
+	"animations": [{
+		"type": "translate",
+		"axis": "Y",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 20
+	}]
+}, {
+	"name": "doorF1",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.024",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -80
+	}]
+}, {
+	"name": "doorF2",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.025",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 170
+	}]
+}, {
+	"name": "doorF3",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.016",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 80
+	}]
+}, {
+	"name": "doorF4",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.015",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -170
+	}]
+}, {
+	"name": "doorB1",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.021",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -80
+	}]
+}, {
+	"name": "doorB2",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.022",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 170
+	}]
+}, {
+	"name": "doorB3",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.013",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 80
+	}]
+}, {
+	"name": "doorB4",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "Cube.023",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -170
+	}]
+}]
