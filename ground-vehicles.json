@@ -22,6 +22,18 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/aptbus2.glb"
 },
+     {
+    "name":"Luggage car",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/luggagecar.glb"
+},
+      {
+    "name":"Fire truck",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/firetruck1.glb"
+},
 {
     "name":"Jetbridge 1",
      "rotation":[0,0,0],
@@ -62,6 +74,7 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/SAAB%20340_427352_2892/gate1.glb"
 }]
+
 
 
 
