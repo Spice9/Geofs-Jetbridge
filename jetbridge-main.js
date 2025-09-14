@@ -36,11 +36,11 @@ geofs.aircraft.instance.addParts([{
 }]
 );
     }
-    else if(modelOption=="option3")
+   else if(modelOption=="option5")
     {
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
-"model": "../../../../backend/aircraft/repository/Airbus a321-211 _427352_5086/jetwaytruck4.glb",
+"model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/jwt12.glb",
 "position": [0,0,0],
 "rotation":[0,0,0]
 }]
@@ -60,18 +60,12 @@ geofs.aircraft.instance.addParts([{
     {
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
-"model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck2.glb",
+"model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck.glb",
 "position": [0,0,0],
 "rotation":[0,0,0]
 }]
 );
     }
-    geofs.aircraft.instance.addParts([{
-    "name":"Catering Truck 2",
-     "rotation":[0,0,0],
-    "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck2.glb"
-}]);
 
 }
 let offset = 0;
@@ -565,18 +559,6 @@ geofs.animation.values.platformLevel = 0;
 			}]
 }]
 );
-                     geofs.aircraft.instance.addParts([{
-"name":"cater_box3",
-"parent":"Catering Truck",
-"node":"Cylinder",
-"animations": [{
-				"type": "translate",
-				"axis": "Y",
-				"value": "jetbridgeRaiseValue",
-				"ratio": 20
-			}]
-}]
-);
  geofs.aircraft.instance.addParts([{
   "name": "doorF1",
   "parent":"Airport bus",
@@ -711,3 +693,4 @@ if (geofs.version >= 3.6) {
 function listPanel() {
     document.getElementById("ListPanel").innerHTML = "";
 }
+
