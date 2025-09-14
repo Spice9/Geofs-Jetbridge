@@ -14,7 +14,7 @@
     "name":"Catering Truck",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/737max_427352_3011/cttruck6.glb"
+    "model": "../../../../backend/aircraft/repository/737max_427352_3011/cttruck7.glb"
 },
      {
     "name":"Airport bus",
@@ -91,6 +91,7 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/gate_3.glb"
 }]
+
 
 
 
