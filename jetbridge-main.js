@@ -60,12 +60,19 @@ geofs.aircraft.instance.addParts([{
     {
     geofs.aircraft.instance.addParts([{
 "name":"pfd9",
-"model": "../../../../backend/aircraft/repository/Boeing 737-600_427352_5203/jwt12.glb",
+"model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck2.glb",
 "position": [0,0,0],
 "rotation":[0,0,0]
 }]
 );
     }
+    geofs.aircraft.instance.addParts([{
+    "name":"Catering Truck 2",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Airbus a318-112 by Luca &_427352_5156/cttruck2.glb"
+}]);
+
 }
 let offset = 0;
 function changePos()
@@ -304,6 +311,8 @@ function getButtonValue(buttonElement) {
   let modelOption = null;
   let modelOptionChecked = null;
 let JBlockCheckValue = 0;
+let raiseCounter=0;
+let lowerCounter = 0;
   // Add event listeners to all radio buttons with name="choice"
   document.querySelectorAll('input[name="option"]').forEach(radio => {
     radio.addEventListener('change', () => {
@@ -410,7 +419,8 @@ document.querySelectorAll('#lockContent input').forEach((lockedItem, index) => {
                     console.log(nameArr);
                 poslist = geofs.aircraft.instance.parts[listData[index].name].position;
                console.log(geofs.aircraft.instance.parts[listData[index].name].position);
-
+                    raiseCounter=0;
+                    lowerCounter = 0;
                 }
             else {
                  geofs.aircraft.instance.parts[listData[index].name].object3d.destroy();
@@ -494,6 +504,7 @@ document.getElementById("acw").addEventListener("click", rotateVeh);
      //Cube.009
 geofs.animation.values.jetbridgeRaiseValue = 0;
 geofs.animation.values.dooropen = 0;
+geofs.animation.values.platformLevel = 0;
 
       geofs.aircraft.instance.addParts([{
 "name":"cater_arm_1",
@@ -549,7 +560,7 @@ geofs.animation.values.dooropen = 0;
 "animations": [{
 				"type": "translate",
 				"axis": "Y",
-				"value": "jetbridgeRaiseValue",
+				"value": "platformLevel",
 				"ratio": 20
 			}]
 }]
@@ -660,10 +671,22 @@ document.getElementById("door2").addEventListener("click", function() {
     });
 
 document.getElementById("raise").addEventListener("click", function() {
+    raiseCounter++;
+    console.log(raiseCounter);
+    if(raiseCounter>=4)
+    {
+         geofs.animation.values.platformLevel +=0.1;
+    }
     geofs.animation.values.jetbridgeRaiseValue += 0.1;
 });
 
 document.getElementById("lower").addEventListener("click", function() {
+        raiseCounter--;
+     console.log(raiseCounter);
+    if(raiseCounter>=3)
+    {
+         geofs.animation.values.platformLevel -=0.1;
+    }
     geofs.animation.values.jetbridgeRaiseValue -= 0.1;
 });
 // Creates a button to toggle the panel
