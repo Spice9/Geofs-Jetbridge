@@ -20,7 +20,7 @@
     "name":"Airport bus",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/aptbus3.glb"
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/aptbus8.glb"
 },
      {
     "name":"Luggage car",
@@ -91,6 +91,7 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/gate_3.glb"
 }]
+
 
 
 
