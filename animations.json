@@ -147,4 +147,51 @@
 		"ratio": -170
 	}]
 
+},
+{
+	"name": "rightDoor1",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "rightDoor1",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 80
+	}]
+}, {
+	"name": "rightDoor2",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "rightDoor2",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -170
+	}]
+}, {
+	"name": "rightDoor3",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "rightDoor3",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": -80
+	}]
+}, {
+	"name": "rightDoor4",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "rightDoor4",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 170
+	}]
+
 }]
+
