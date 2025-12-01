@@ -38,16 +38,16 @@
 		"value": "jetbridgeRaiseValue",
 		"ratio": 20
 	}]
-}, {
-	"name": "cater_box2",
-	"parent": "Catering Truck",
-	"node": "Cube.005",
-	"animations": [{
-		"type": "translate",
-		"axis": "Y",
-		"value": "jetbridgeRaiseValue",
-		"ratio": 20
-	}]
+},{
+"name":"cater_box2",
+"parent":"Catering Truck",
+"node":"Cube.005",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "platformLevel",
+				"ratio": 20
+			}]
 }, {
 	"name": "cater_box3",
 	"parent": "Catering Truck",
@@ -146,4 +146,5 @@
 		"value": "dooropen",
 		"ratio": -170
 	}]
+
 }]
