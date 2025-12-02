@@ -157,7 +157,7 @@
 		"type": "rotate",
 		"axis": "Y",
 		"value": "dooropen",
-		"ratio": -170
+		"ratio": 80
 	}]
 }, {
 	"name": "rightDoor2",
@@ -168,18 +168,7 @@
 		"type": "rotate",
 		"axis": "Y",
 		"value": "dooropen",
-		"ratio": 80
-	}]
-}, {
-	"name": "rightDoor3",
-	"parent": "Airport bus",
-	"type": "frame",
-	"node": "rightDoor3",
-	"animations": [{
-		"type": "rotate",
-		"axis": "Y",
-		"value": "dooropen",
-		"ratio": 170
+		"ratio": -170
 	}]
 }, {
 	"name": "rightDoor4",
@@ -192,8 +181,20 @@
 		"value": "dooropen",
 		"ratio": -80
 	}]
+}, {
+	"name": "rightDoor3",
+	"parent": "Airport bus",
+	"type": "frame",
+	"node": "rightDoor3",
+	"animations": [{
+		"type": "rotate",
+		"axis": "Y",
+		"value": "dooropen",
+		"ratio": 170
+	}]
 
 }]
+
 
 
 
