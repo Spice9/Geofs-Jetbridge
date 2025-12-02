@@ -90,17 +90,19 @@
      "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/gate_3.glb"
+},
+{
+    "name":"Airport Gate#3 level 1",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Bombardier Learjet 45 XR_427352_5073/jbv1.glb"
+},
+{
+    "name":"Airport Gate#3 level 2",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/Bombardier Learjet 45 XR_427352_5073/jbv2.glb"
 }]
-
-
-
-
-
-
-
-
-
-
 
 
 
