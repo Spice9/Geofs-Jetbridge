@@ -157,7 +157,7 @@
 		"type": "rotate",
 		"axis": "Y",
 		"value": "dooropen",
-		"ratio": 80
+		"ratio": -80
 	}]
 }, {
 	"name": "rightDoor2",
@@ -179,7 +179,7 @@
 		"type": "rotate",
 		"axis": "Y",
 		"value": "dooropen",
-		"ratio": -80
+		"ratio": 80
 	}]
 }, {
 	"name": "rightDoor3",
@@ -194,6 +194,7 @@
 	}]
 
 }]
+
 
 
 
