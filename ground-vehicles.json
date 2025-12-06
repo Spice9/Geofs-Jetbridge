@@ -28,6 +28,12 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Boeing%20p8I%20Neptune_427352_3292/luggagecar.glb"
 },
+    {
+    "name":"Cargo ramp",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/cargo_ramp2.glb"
+},
       {
     "name":"Fire truck",
      "rotation":[0,0,0],
@@ -103,6 +109,7 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Bombardier Learjet 45 XR_427352_5073/jbv2.glb"
 }]
+
 
 
 
