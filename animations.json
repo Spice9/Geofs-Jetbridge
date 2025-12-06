@@ -253,12 +253,12 @@
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
-		"value": "rampRaiseValue",
+		"value": "rampLevel",
 		"ratio": -50
 	}, {
 		"type": "translate",
 		"axis": "Z",
-		"value": "rampRaiseValue",
+		"value": "rampLevel",
 		"ratio": -4
 	}]
 }, {
@@ -268,12 +268,12 @@
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
-		"value": "rampRaiseValue",
+		"value": "rampLevel",
 		"ratio": 50
 	}, {
 		"type": "translate",
 		"axis": "Z",
-		"value": "rampRaiseValue",
+		"value": "rampLevel",
 		"ratio": 4
 	}]
 },
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
