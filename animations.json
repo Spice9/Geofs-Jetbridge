@@ -232,7 +232,7 @@
 		"type": "translate",
 		"axis": "Y",
 		"value": "rampRaiseValue",
-		"ratio": 5
+		"ratio": 1
 	}]
 },
 {
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
