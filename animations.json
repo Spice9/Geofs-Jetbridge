@@ -206,7 +206,7 @@
 	}, {
 		"type": "translate",
 		"axis": "Z",
-		"value": "rampRaiseValue,
+		"value": "rampRaiseValue",
 		"ratio": -4
 	}]
 }, {
@@ -258,7 +258,7 @@
 	}, {
 		"type": "translate",
 		"axis": "Z",
-		"value": "rampRaiseValue,
+		"value": "rampRaiseValue",
 		"ratio": -4
 	}]
 }, {
@@ -288,3 +288,4 @@
 				"ratio": 20
 			}]
 }]
+
