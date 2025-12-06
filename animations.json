@@ -193,9 +193,98 @@
 		"ratio": 170
 	}]
 
+},
+{
+	"name": "ramp_arm_back_1",
+	"parent": "cargo_ramp",
+	"node": "ramp_arm_back_1",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -4
+	}]
+}, {
+	"name": "ramp_arm_back_2",
+	"parent": "cargo_ramp",
+	"node": "ramp_arm_back_2",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 4
+	}]
+}, {
+	"name": "ramp_floor_back",
+	"parent": "cargo_ramp",
+	"node": "ramp_floor_back",
+	"animations": [{
+		"type": "translate",
+		"axis": "Y",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 20
+	}]
+},
+{
+"name":"ramp_floor_front2",
+"parent":"cargo_ramp",
+"node":"ramp_floor_front2",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "platformLevel",
+				"ratio": 20
+			}]
+},
+{
+	"name": "ramp_arm_front_1",
+	"parent": "cargo_ramp",
+	"node": "ramp_arm_front_1",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": -4
+	}]
+}, {
+	"name": "ramp_arm_front_2",
+	"parent": "cargo_ramp",
+	"node": "ramp_arm_front_2",
+	"animations": [{
+		"type": "rotate",
+		"axis": "X",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 50
+	}, {
+		"type": "translate",
+		"axis": "Z",
+		"value": "jetbridgeRaiseValue",
+		"ratio": 4
+	}]
+},
+{
+"name":"cater_box7",
+"parent":"cargo_ramp",
+"node":"ramp_floor_front",
+"animations": [{
+				"type": "translate",
+				"axis": "Y",
+				"value": "rampLevel",
+				"ratio": 20
+			}]
 }]
-
-
-
-
-
