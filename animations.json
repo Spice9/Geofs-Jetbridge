@@ -212,7 +212,7 @@
 }, {
 	"name": "ramp_arm_back_2",
 	"parent": "cargo_ramp",
-	"node": "ramp_arm_back_2",
+	"node": "Empty.003",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -249,7 +249,7 @@
 {
 	"name": "ramp_arm_front_1",
 	"parent": "cargo_ramp",
-	"node": "ramp_arm_front_1",
+	"node": "Empty",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -264,7 +264,7 @@
 }, {
 	"name": "ramp_arm_front_2",
 	"parent": "cargo_ramp",
-	"node": "ramp_arm_front_2",
+	"node": "Empty.001",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -288,4 +288,5 @@
 				"ratio": 20
 			}]
 }]
+
 
