@@ -195,9 +195,9 @@
 
 },
 {
-	"name": "ramp_arm_back_1",
+	"name": "ramp_arm_back_1_",
 	"parent": "Cargo ramp",
-	"node": "ramp_arm_back_1",
+	"node": "ramp_arm_back_1_",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -210,9 +210,9 @@
 		"ratio": -4
 	}]
 }, {
-	"name": "ramp_arm_back_2",
+	"name": "ramp_arm_back_2_",
 	"parent": "Cargo ramp",
-	"node": "Empty.003",
+	"node": "Empty.003_",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -225,9 +225,9 @@
 		"ratio": 4
 	}]
 }, {
-	"name": "ramp_floor_back",
+	"name": "ramp_floor_back_",
 	"parent": "Cargo ramp",
-	"node": "ramp_floor_back",
+	"node": "ramp_floor_back_",
 	"animations": [{
 		"type": "translate",
 		"axis": "Y",
@@ -236,8 +236,8 @@
 	}]
 },
 {
-"name":"ramp_floor_front",
-"parent":"ramp_floor_front",
+"name":"ramp_floor_front_",
+"parent":"ramp_floor_front_",
 "node":"Empty2",
 "animations": [{
 				"type": "translate",
@@ -247,9 +247,9 @@
 			}]
 },
 {
-	"name": "ramp_arm_front_1",
+	"name": "ramp_arm_front_1_",
 	"parent": "Cargo ramp",
-	"node": "Empty",
+	"node": "Empty_",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -262,9 +262,9 @@
 		"ratio": -3.3
 	}]
 }, {
-	"name": "ramp_arm_front_2",
+	"name": "ramp_arm_front_2_",
 	"parent": "Cargo ramp",
-	"node": "Empty.001",
+	"node": "Empty.001_",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -278,9 +278,9 @@
 	}]
 },
 {
-"name":"cater_box7",
+"name":"cater_box7_",
 "parent":"Cargo ramp",
-"node":"ramp_floor_front8",
+"node":"ramp_floor_front8_",
 "animations": [{
 				"type": "translate",
 				"axis": "Y",
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
