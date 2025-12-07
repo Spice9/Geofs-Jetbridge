@@ -254,12 +254,12 @@
 		"type": "rotate",
 		"axis": "X",
 		"value": "rampLevel",
-		"ratio": -50
+		"ratio": -70
 	}, {
 		"type": "translate",
 		"axis": "Z",
 		"value": "rampLevel",
-		"ratio": -4
+		"ratio": -2.3
 	}]
 }, {
 	"name": "ramp_arm_front_2",
@@ -269,12 +269,12 @@
 		"type": "rotate",
 		"axis": "X",
 		"value": "rampLevel",
-		"ratio": 50
+		"ratio": 70
 	}, {
 		"type": "translate",
 		"axis": "Z",
 		"value": "rampLevel",
-		"ratio": 4
+		"ratio": 2.3
 	}]
 },
 {
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
