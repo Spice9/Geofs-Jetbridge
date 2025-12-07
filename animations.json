@@ -238,7 +238,7 @@
 {
 "name":"ramp_floor_front",
 "parent":"Cargo ramp",
-"node":"ramp_floor_front",
+"node":"Empty.002",
 "animations": [{
 				"type": "translate",
 				"axis": "Y",
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
