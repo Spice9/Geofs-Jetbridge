@@ -264,7 +264,7 @@
 }, {
 	"name": "ramp_arm_front_2",
 	"parent": "Cargo ramp",
-	"node": "Empty.001",
+	"node": "Empty9",
 	"animations": [{
 		"type": "rotate",
 		"axis": "X",
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
