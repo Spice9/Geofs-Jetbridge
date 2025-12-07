@@ -108,7 +108,20 @@
      "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Bombardier Learjet 45 XR_427352_5073/jbv2.glb"
+},
+{
+    "name":"Airport Gate#4 level 1",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_5.glb"
+},
+{
+    "name":"Airport Gate#4 level 2",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_6.glb"
 }]
+
 
 
 
