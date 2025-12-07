@@ -32,7 +32,7 @@
     "name":"Cargo ramp",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/cargo_ramp6.glb"
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/cargo_ramp7.glb"
 },
       {
     "name":"Fire truck",
@@ -109,6 +109,7 @@
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/Bombardier Learjet 45 XR_427352_5073/jbv2.glb"
 }]
+
 
 
 
