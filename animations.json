@@ -259,7 +259,7 @@
 		"type": "translate",
 		"axis": "Z",
 		"value": "rampLevel",
-		"ratio": -0.6
+		"ratio": -3.3
 	}]
 }, {
 	"name": "ramp_arm_front_2",
@@ -274,7 +274,7 @@
 		"type": "translate",
 		"axis": "Z",
 		"value": "rampLevel",
-		"ratio": 0.6
+		"ratio": 3.3
 	}]
 },
 {
@@ -288,6 +288,7 @@
 				"ratio": 20
 			}]
 }]
+
 
 
 
