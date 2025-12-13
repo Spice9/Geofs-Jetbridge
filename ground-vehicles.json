@@ -120,7 +120,14 @@
      "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_6.glb"
+},
+{
+    "name":"Airport Gate#4 level 3 (a380)",
+     "rotation":[0,0,0],
+    "position":[0,0,0],
+    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_7.glb"
 }]
+
 
 
 
