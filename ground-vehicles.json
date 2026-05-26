@@ -119,19 +119,19 @@
     "name":"Airport Gate#4 level 1",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_5.glb"
+    "model": "../../../../backend/aircraft/repository/bldg9_427352_3938/gate_5_2.glb"
 },
 {
     "name":"Airport Gate#4 level 2",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_6.glb"
+    "model": "../../../../backend/aircraft/repository/bldg9_427352_3938/gate_6_2.glb"
 },
 {
     "name":"Airport Gate#4 level 3 (a380)",
      "rotation":[0,0,0],
     "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_7.glb"
+    "model": "../../../../backend/aircraft/repository/bldg9_427352_3938/gate_7_2.glb"
 }]
 
 
