@@ -132,12 +132,6 @@
      "rotation":[0,0,0],
     "position":[0,0,0],
     "model": "../../../../backend/aircraft/repository/a3test_427352_3436/gate_7.glb"
-},
-{
-    "name":"Airport Gate#5 (VIDP)",
-     "rotation":[0,0,0],
-    "position":[0,0,0],
-    "model": "../../../../backend/aircraft/repository/Dornier do228 (7Air)_427352_2965/delhit3_2.glb"
 }]
 
 
